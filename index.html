@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-</head>
-<body>
-    <script src="./scripts.js"></script>
-</body>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@700&family=Rokkitt:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 id="mainTitle">Calculator</h1>
+    </header>
+    <main>
+      <div id="calculator">
+        <div id="calcText">
+          <div id="titleLine">
+            <p id="CHASIO">CHASIO</p>
+            <p id="FXTEXT">CALCULATOR fx-04GTR</p>
+          </div>
+          <div id="SVPAM">
+            <p id="FOLLOWME">F-O.L.L.O.W.M.E.</p>
+          </div>
+        </div>
+        <div id="screen">
+          <p id="visibleDisplay">0</p>
+        </div>
+        <div id="calcButtons">
+          <div id="btnLine1">
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button id="equals">=</button>
+          </div>
+          <div id="btnLine2">
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="plus">+</button>
+          </div>
+          <div id="btnLine3">
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button id="minus">-</button>
+          </div>
+          <div id="btnLine4">
+            <button id="division">/</button>
+            <button id="multiplication">*</button>
+            <button id="clear">CD</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Follow me!</p>
+    </footer>
+    <script defer src="./scripts.js"></script>
+  </body>
 </html>
