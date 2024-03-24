@@ -1,7 +1,7 @@
 let firstNumber = null;
 let operatorCharacter = null;
 let secondNumber = null;
-let currentDisplay;
+let justOperated = true;
 
 addButtonListeners();
 
@@ -10,23 +10,33 @@ function operate(first, operator, second) {
   if (
     typeof first !== "number" ||
     typeof second !== "number" ||
-    typeof operator !== string
+    typeof operator !== "string"
   ) {
     return "Error in input";
   }
   switch (operator) {
     case "+":
-      return add(first, second);
-      break;
+      if (add(first, second).toString().length >= 7)
+        return add(first, second).toExponential();
+      else return add(first, second);
     case "-":
-      return subtract(first, second);
-      break;
+      if (subtract(first, second).toString().length >= 7)
+        return subtract(first, second).toExponential();
+      else return subtract(first, second);
     case "*":
-      return multiply(first, second);
-      break;
+      if (multiply(first, second).toString().length >= 7)
+        return multiply(first, second).toExponential();
     case "/":
-      return divide(first, second);
-      break;
+      if (second === 0) {
+        firstNumber = null;
+        operatorCharacter = null;
+        secondNumber = null;
+        justOperated = false;
+        return "haha no";
+      }
+      if (divide(first, second).toString().length >= 7)
+        return divide(first, second).toExponential();
+      else return divide(first, second);
     default:
       return "Sorry, thats not a supported operator.";
   }
@@ -78,14 +88,52 @@ function updateDisplay(input) {
       firstNumber = null;
       operatorCharacter = null;
       secondNumber = null;
+      justOperated = false;
+    } else {
+      if (input === "=") {
+        if (firstNumber === null) {
+          firstNumber = null;
+          operatorCharacter = null;
+          secondNumber = null;
+        } else {
+          display.innerText = operate(
+            Number(firstNumber),
+            operatorCharacter,
+            Number(display.innerText)
+          );
+          justOperated = true;
+          firstNumber = null;
+          operatorCharacter = null;
+          secondNumber = null;
+        }
+      } else {
+        if (firstNumber === null) {
+          firstNumber = Number(display.innerText);
+          operatorCharacter = input;
+          display.innerText = 0;
+        } else {
+          display.innerText = firstNumber = operate(
+            Number(firstNumber),
+            operatorCharacter,
+            Number(display.innerText)
+          );
+          justOperated = true;
+          operatorCharacter = input;
+          secondNumber = null;
+        }
+      }
     }
-    //Saves text to a variable
-    //deletes text from display
-    display.innerText;
   } else {
-    if (display.innerText == 0) {
+    if (
+      display.innerText == 0 ||
+      display.innerText == "haha no" ||
+      justOperated == true
+    ) {
       display.innerText = input;
-    } else display.innerText += input;
+      justOperated = false;
+    } else if (display.innerText.toString().length < 15) {
+      display.innerText += input;
+    }
   }
 }
 

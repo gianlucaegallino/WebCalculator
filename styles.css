@@ -3,16 +3,26 @@
   src: url("fonts/DSEG7Modern-BoldItalic.woff2") format("woff2");
 }
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; /* Horizontal alignment */
-    min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
-    margin: 0; /* Reset default margin */
-    padding: 0; /* Reset default padding */  
-    background: -webkit-linear-gradient(90deg, #8330e9,#c064c8,#cba1bc);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #8330e9,#c064c8,#cba1bc);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
-    
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Horizontal alignment */
+  min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  background: -webkit-linear-gradient(
+    90deg,
+    #8330e9,
+    #c064c8,
+    #cba1bc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #8330e9,
+    #c064c8,
+    #cba1bc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 main {
   display: flex;
   flex-direction: column;
@@ -39,6 +49,7 @@ main {
   padding-top: 1.2rem;
   padding-right: 0.5rem;
   padding-bottom: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 #titleLine {
@@ -88,11 +99,38 @@ button {
   border: none;
   margin: 0.3rem;
 }
-#mainTitle{
-    font-family: "Rajdhani", sans-serif;
+
+.Highlightbutton {
+  background-color: rgb(177, 100, 110);
+}
+
+.Operationbutton {
+  background-color: rgb(90, 90, 90);
+}
+
+#mainTitle {
+  font-family: "Rajdhani", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5rem;
-  margin: 0px;
+  font-size: 3rem;
   color: azure;
 }
+
+#followReminder {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: azure;
+}
+
+
+    footer {
+        font-size: 1rem;
+        font-family: "Helvetica", sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+        gap: 1rem;
+    }
